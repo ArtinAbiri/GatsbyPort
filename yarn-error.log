@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\kevin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-feather
+  C:\Program Files\nodejs\node.exe C:\Users\kevin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-helmet
 
 PATH: 
   C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\PostgreSQL\13\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Intel\Intel(R) Memory and Storage Tool\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Git\cmd;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\kevin\AppData\Local\Programs\Python\Python310;C:\Users\kevin\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\nodejs\;C:\Users\kevin\Desktop\app\ngrok;C:\Program Files\nodejs;C:\Users\kevin\AppData\Roaming\npm;C:\Users\kevin\AppData\Local\gitkraken\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\kevin\Desktop\app\GatsbyPortfolio\node_modules\@msgpackr-extract\msgpackr-extract-win32-x64\node.abi93.node'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\kevin\Desktop\app\GatsbyPortfolio\node_modules\@lmdb\lmdb-win32-x64\node.abi93.node'
 
 npm manifest: 
   {
@@ -45,7 +45,10 @@ npm manifest:
       "node-sass": "^7.0.1",
       "react": "^18.2.0",
       "react-dom": "18.2.0",
-      "react-loadable": "^5.5.0"
+      "react-feather": "^2.0.10",
+      "react-helmet": "^6.1.0",
+      "react-loadable": "^5.5.0",
+      "scrollmagic": "^2.0.8"
     },
     "devDependencies": {
       "prettier": "^2.7.1"
