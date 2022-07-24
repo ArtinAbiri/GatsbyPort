@@ -89,12 +89,7 @@ export default function Projects() {
 
             <Navbar/>
             <div className="main-container" id="main-container">
-                <Helmet
-                    htmlAttributes={{
-                        lang: 'en',
-                        title: 'My Projects',
-                    }}
-                />
+
                 <ul className='ul' ref={menuItems}>
                     {renderItems.map((project, index) => (
                         <ProjectItem key={index} project={project} itemIndex={index}/>))}

@@ -18,10 +18,11 @@ const Index = () => {
       <Helmet
           htmlAttributes={{
             lang: 'en',
-            title: 'Artin Abiri Home',
           }}
       />
-      <HomeLazy />
+        <title>Artin Abiri Home</title>
+
+        <HomeLazy />
     </>
   );
 };

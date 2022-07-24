@@ -12,12 +12,7 @@ const About = () => {
             className="main-container"
             data-scroll-container
         >
-            <Helmet
-                htmlAttributes={{
-                    lang: 'en',
-                    title: 'About Me',
-                }}
-            />
+
             <Navbar/>
                 <AboutHeader/>
                 <Skills/>
