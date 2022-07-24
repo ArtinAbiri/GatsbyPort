@@ -1,16 +1,17 @@
 import React, {useState} from "react";
 import {useEffect} from "react";
 import {useRef} from "react";
-
+import CustomCursor from "../components/CustomCursor";
+import CursorManager from "../components/CustomCursor/CursorManager";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Featured from "../components/Featured";
 import About from "../components/About";
-import Gallery from "../components/Gallery";
 import useLocoScroll from "../hooks/useLocoScroll";
 
 import "../styles/home.scss";
+import Knowlage from "../components/Knowlage";
 
 const Home = () => {
     const ref = useRef(null);
@@ -22,7 +23,7 @@ const Home = () => {
     useEffect(() => {
         if (!preloader && ref) {
             if (typeof window === "undefined" || !window.document) {
-                return;
+
             }
         }
     }, [preloader]);
@@ -61,7 +62,7 @@ const Home = () => {
                     <h1>Portfolio</h1>
                 </div>
             ) : (
-                <div
+             <div
                     className="main-container"
                     id="main-container"
                     data-scroll-container
@@ -71,11 +72,12 @@ const Home = () => {
                     <Header/>
                     <Featured/>
                     <About/>
-                    <Gallery/>
+                    <Knowlage/>
                     <Footer/>
                 </div>
             )}
-        </>
+            </>
+
     );
 };
 export default Home;

@@ -4,7 +4,7 @@ $breakpoint: 1000px;
     @media screen and (max-width: $breakpoint) {
       font-size: 24px;
     }
-    font-size: 3vw;
+    font-size: 2vw;
     line-height: 1.12;
     opacity: 0;
 
@@ -12,8 +12,59 @@ $breakpoint: 1000px;
       opacity: 0;
       transform: translateY(0px);
     }
+
     &.is-reveal {
       opacity: 1;
     }
   }
 }
+
+.flex-about {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 30vw;
+    float: right;
+    margin-top: -50px;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    display: block;
+    img {
+      width: 90vw;
+      margin-top: 0;
+
+    }
+  }
+}
+
+
+
+.button {
+  --c: #0765b6;
+  color: var(--c);
+  font-size: 16px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+
+.button:hover {
+  color: #041628;
+  border-color: #041628;
+}
+
+

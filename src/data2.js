@@ -1,64 +1,46 @@
-
-const photos = [
+export const pageData = [
     {
-        url: "/image/folkes.webp",
-        description: "Folkes",
+        url:
+            "/image/folkes.webp",
+        title: "Folkes",
+        info: ["Project Management", "Brand strategy", "SEO"],
     },
     {
-        url: "/image/kavlinge.webp",
-        description: "Kävlinge Municipality",
+        url:
+            "/image/kavlinge.webp",
+        title: "Kävlinge",
+        info: ["Project Management", "AWS Manager"],
     },
     {
-        url: "/image/hhgs.webp",
-        description: "HHGS",
-    },
-    {
-        url: "/image/catefix.webp",
-        description: "CateFix",
-    },
-    {
-        url: "/image/enspecta.webp",
-        description: "Enspecta",
-    },
-    {
-        url: "/image/flight.webp",
-        description: "FlightDeck/Norwegian",
+        url:
+            "/image/hhgs.webp",
+        title: "HHGS",
+        info: ["Project Management", "Brand strategy"],
     },
     {
         url: "/image/pharmiva.webp",
-        description: "Verniva",
+        title: "Pharmiva",
+        info: ["Project Management", "Project Support", "SEO"],
     },
     {
         url: "/image/nso.webp",
-        description: "Not So Ordinary",
+        title: "NSO",
+        info: ["Project Support" ],
     },
     {
         url: "/image/aluwave.webp",
-        description: "Aluwave",
+        title: "Aluwave",
+        info: ["Project Management"],
     },
     {
         url: "/image/npg.webp",
-        description: "Nordic Premium Group",
+        title: "NPG",
+        info: ["Project Management"],
     },
     {
-        url: "/image/hhgs.webp",
-        description: "HHGS",
+        url: "/image/enspecta.webp",
+        title: "Enspecta",
+        info: ["Project Management", "Rebranding"],
     },
-    {
-        url: "/image/pharmiva.webp",
-        description: "Verniva",
-    },
-    {
-        url: "/image/kavlinge.webp",
-        description: "Kävlinge Municipality",
-    },
-    {
-        url: "/image/nso.webp",
-        description: "Not So Ordinary",
-    },
-    {
-        url: "/image/folkes.webp",
-        description: "Folkes",
-    },
+
 ];
-export default photos;

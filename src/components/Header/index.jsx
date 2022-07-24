@@ -11,7 +11,7 @@ export default function Header() {
       type: "lines",
       linesClass: "lineChildren",
     });
-    
+
     const splitParent = new SplitText("#header-text", {
       type: "lines",
       linesClass: "lineParent",
@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <section className="header-container" data-scroll-section>
 
-      <h1 id="header-text">This is Me</h1>
+      <h1 id="header-text">Artin Abiri</h1>
     </section>
   );
 }

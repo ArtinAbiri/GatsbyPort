@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import cn from "classnames";
 
 import SectionHeader from "../SectionHeader";
@@ -10,41 +10,55 @@ import useOnScreen from "../../hooks/useOnScreen";
 import "./style.scss";
 
 export default function About() {
-  const ref = useRef(null);
+    const ref = useRef(null);
 
-  const [reveal, setReveal] = useState(false);
-  const onScreen = useOnScreen(ref);
+    const [reveal, setReveal] = useState(false);
+    const onScreen = useOnScreen(ref);
 
-  useEffect(() => {
-    if (onScreen) setReveal(onScreen);
-  }, [onScreen]);
+    useEffect(() => {
+        if (onScreen) setReveal(onScreen);
+    }, [onScreen]);
 
-  useEffect(() => {
-    if (reveal) {
-      const split = new SplitText("#headline", { type: "lines" });
+    useEffect(() => {
+        if (reveal) {
+            const split = new SplitText("#headline", {type: "lines"});
 
-      gsap.to(split.lines, {
-        duration: 1,
-        y: -20,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "power4.out",
-        // onComplete: () => split.revert(),
-      });
+            gsap.to(split.lines, {
+                duration: 1,
+                y: -20,
+                opacity: 1,
+                stagger: 0.1,
+                ease: "power4.out",
+                // onComplete: () => split.revert(),
+            });
+        }
+    }, [reveal]);
+
+    function goAbout() {
+        window.location.href = "/about";
     }
-  }, [reveal]);
 
-  return (
-    <section
-      className={cn("about-section", { "is-reveal": reveal })}
-      data-scroll-section
-    >
-      <SectionHeader title="about" />
-      <p ref={ref} id="headline" className={cn({ "is-reveal": reveal })}>
-        Hi! I'm Artin and I'm a business developer, project manager and web developer based in Gothenburg.
-        Currently finishing my Engineering master in Tech based Business Development and Entrepreneurship at Chalmers University of Technology.
-        Don't hesitate to give me a call or send me an email!
-      </p>
-    </section>
-  );
+    return (
+        <section
+            className={cn("about-section", {"is-reveal": reveal})}
+            data-scroll-section
+        >
+            <SectionHeader title="about"/>
+            <div className='flex-about'>
+                <div>
+                    <p ref={ref} id="headline" className={cn({"is-reveal": reveal})}>
+                        Hi! I'm Artin and I'm a business developer, project manager and web developer based in
+                        Gothenburg.
+                        Currently finishing my Engineering master in Tech based Business Development and
+                        Entrepreneurship at Chalmers University of Technology.
+
+                    </p>
+                    <div className='button' onClick={goAbout}>
+                        More about me
+                    </div>
+                </div>
+                <img src={'/image/train.gif'}/>
+            </div>
+        </section>
+    );
 }

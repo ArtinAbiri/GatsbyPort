@@ -1,8 +1,11 @@
 .footer {
+  font-family: "Bai Jamjuree", sans-serif;
   text-align: center;
   padding-bottom: 200px;
+  width: 100vw;
+margin-left: -5vw;
   .location {
-    font-size: 18vw;
+    font-size: 5vw;
     text-transform: uppercase;
     font-family: "Bodoni Moda", serif;
 
@@ -12,3 +15,15 @@
     }
   }
 }
+
+.footerButton {
+  height: 45px;
+  width: 45px;
+  margin: -45px 10px 15px;
+  cursor: pointer;
+}
+.bottomfoot {
+  cursor: pointer;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px}

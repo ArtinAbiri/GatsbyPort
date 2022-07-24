@@ -8,50 +8,35 @@ import cn from "classnames";
 import "./style.scss";
 
 export default function Footer() {
-  const ref = useRef(null);
 
-  const [reveal, setReveal] = useState(false);
-  const onScreen = useOnScreen(ref, 0.5);
-
-  useEffect(() => {
-    if (onScreen) setReveal(onScreen);
-  }, [onScreen]);
-
-  useEffect(() => {
-    if (reveal) {
-      const split = new SplitText("#location-text", {
-        type: "lines",
-        linesClass: "lineChildren",
-      });
-      const splitParent = new SplitText("#location-text", {
-        type: "lines",
-        linesClass: "lineParent",
-      });
-      gsap.fromTo(
-        split.lines,
-        { y: 200 },
-        {
-          duration: 1,
-          y: 0,
-          // opacity: 1,
-          stagger: 0.1,
-          ease: "power2",
-        }
-      );
-    }
-  }, [reveal]);
 
   return (
     <section className="footer" data-scroll-section>
-      <SectionHeader title="Made by" />
+      <div>
+          <br/>
+          <h5 style={{fontSize: '20px',color: 'black', marginTop:'70px'}}>
+              artinabiri
+          </h5>
+          <h6 style={{color:"#0765b6", marginTop:'10px'}}>
+              Around the web
+          </h6>
 
-      <h1
-        className={cn("location", { "is-reveal": reveal })}
-        id="location-text"
-        ref={ref}
-      >
-        Artin Abiri
-      </h1>
+          <div style={{marginTop: '10vh'}}>
+              <img src={'./image/github.webp'} className='footerButton'
+                   onClick={() => window.open("https://github.com/ArtinAbiri", "_blank")} alt="github_logo"/>
+              <img src={'./image/linkedin.webp'} className='footerButton'
+                   onClick={() => window.open("https://www.linkedin.com/in/artinabiri/", "_blank")} alt='linkedin_logo'/>
+
+              <br/>
+              <br/>
+              <br/>
+              <p className='bottomfoot' onClick={() => window.location = 'mailto: kevinabiri@gmail.com'}>
+                  Email: Kevinabiri@gmail.com
+              </p>
+              <p className='bottomfoot' onClick={() => window.location = 'tel:+46725555510'}>
+                  Phone: +46725555510</p>
+          </div>
+      </div>
     </section>
   );
 }

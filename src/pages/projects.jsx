@@ -1,20 +1,13 @@
 import React from "react";
 import Loadable from "react-loadable";
-import "../styles/home.scss";
-import Navbar from "../components/Navbar";
+import "../styles/projects.scss";
+import Projects from "../containers/Projects";
 
-const loader = () => <div>Loading.</div>;
-//
-const ProjectLazy = Loadable({
-    loader: () => import("../containers/Projects"),
-    loading: loader,
-});
-
-const Index = () => {
-    return (
-        <>
-            <ProjectLazy />
-        </>
-    );
+const ProjectsLazy = () => {
+  return (
+    <>
+      <Projects />
+    </>
+  );
 };
-export default Index;
+export default ProjectsLazy;

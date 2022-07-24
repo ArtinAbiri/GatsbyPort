@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600&family=Source+Code+Pro:wght@700&display=swap');
+.Skill-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5vw;}
+
+.Skill-div{
+  width: 90vw;
+  height: auto;
+  padding-bottom: 30px;
+  margin: 50px;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+
+  display: flex;
+  flex-direction: column;
+}
+.Skill-Title{
+  font-size:10vw;
+  font-family: 'Antonio', sans-serif;
+  font-weight: 700;
+}
+.Skill-Title2{
+  font-size:10vw;
+  font-family: 'Source Code Pro', sans-serif;
+  font-weight: 700;
+}
+.Skill-Title3{
+  font-size:10vw;
+  font-family: 'Edu NSW ACT Foundation', sans-serif;
+  font-weight: 600;
+}
+
+.Skill-sub{
+  padding-right: 20px;
+  font-size: 30px;
+  margin-left: 20vw;
+  margin-top: 50px;
+}
+
+.Skills{
+  display: grid;
+  margin-top: 50px;
+  font-size: 1.5vw;
+  width: 90vw;
+  grid-template-columns: repeat(3,calc(90vw/3));
+  grid-template-rows: repeat(2,60px);
+  justify-items: center;
+  align-items: center;
+}
+.Skills2{
+  display: grid;
+  margin-top: 50px;
+  font-size: 1.5vw;
+  width: 90vw;
+  grid-template-columns: repeat(5,calc(90vw/5));
+  grid-template-rows: repeat(2,60px);
+  justify-items: center;
+  align-items: center;
+}
+.Skills3{
+  display: grid;
+  margin-top: 50px;
+  font-size: 1.5vw;
+  width: 90vw;
+  grid-template-columns: repeat(3,calc(90vw/3));
+  grid-template-rows: repeat(2,60px);
+  justify-items: center;
+  align-items: center;
+}
+.Skills-li{
+  padding: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  border-radius: 30px;
+  color: #000000;
+}
+
+

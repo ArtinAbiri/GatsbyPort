@@ -1,134 +1,92 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { useRef } from "react";
-import photos from "../data2";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/src/locomotive-scroll.scss";
-import GridItem from "../components/Projects/GridItem";
+import React, {useEffect} from "react";
+import {useRef} from "react";
+import ProjectItem from "../components/ProjectItem";
+import CustomCursor from "../components/CustomCursor";
+import CursorManager from "../components/CustomCursor/CursorManager";
+import {pageData} from "../data2";
+import {useState} from "react";
 
-import imagesLoaded from "imagesloaded";
-
-import "../styles/home.scss";
 import Navbar from "../components/Navbar";
+import FooterScroll from "../components/FooterScroll";
 
-const clamp = (value, min, max) =>
-    value <= min ? min : value >= max ? max : value;
+const WindowSize = {width: window.innerWidth, height: window.innerHeight};
 
-const preloadImages = (selector) => {
-    return new Promise((resolve) => {
-        imagesLoaded(
-            document.querySelectorAll(selector),
-            { background: true },
-            resolve
-        );
-    });
-};
+export default function Projects() {
+    const menuItems = useRef(null);
+    const [renderItems, setRenderItems] = useState(pageData);
 
-const Projects = () => {
-    const ref = useRef(null);
-    const leftColumnRef = useRef(null);
-    const rightColumnRef = useRef(null);
-    const middleColumnRef = useRef(null);
-    const scroll = useRef({
-        cache: 0,
-        current: 0,
-    });
+    const cloneItems = () => {
+        // Get the height of one menu item
+        const itemHeight = menuItems.current.childNodes[0].offsetHeight;
+        // How many items fit in the window?
+        const fitIn = Math.ceil(WindowSize.height / itemHeight);
+        // Create [fitIn] clones from the beginning of the list
+
+        // Add clones
+        const clonedItems = [...renderItems]
+            .filter((_, index) => index < fitIn)
+            .map((target, index) => {
+                return target;
+            });
+
+        // All clones height
+
+        setRenderItems([...renderItems, ...clonedItems]);
+        return clonedItems.length * itemHeight;
+    };
+
+    const getScrollPos = () => {
+        return ((menuItems.current.pageYOffset || menuItems.current.scrollTop) - (menuItems.current.clientTop || 0));
+    };
+    const setScrollPos = (pos) => {
+        menuItems.current.scrollTop = pos;
+    };
+
+    const initScroll = () => {
+        // Scroll 1 pixel to allow upwards scrolling
+        const scrollPos = getScrollPos();
+        if (scrollPos <= 0) {
+            setScrollPos(1);
+        }
+    };
+
     useEffect(() => {
+        const clonesHeight = cloneItems();
+        initScroll();
+        menuItems.current.style.scrollBehavior = "unset";
 
-        const scrollElement = new LocomotiveScroll({
-            el: ref.current,
-            smooth: true,
-            smartphone: {
-                smooth: true,
-            },
-            // direction: "horizontal",
-            // multiplier: 0.5,
-            getDirection: true,
-            getSpeed: true,
-            // lerp: 0.5
-        });
-        scrollElement.on("scroll", (obj) => {
-            // Find distance between scroll updates
-            scroll.current.current = obj.scroll.y;
-            const distance = scroll.current.current - scroll.current.cache;
-            scroll.current.cache = scroll.current.current;
+        const scrollUpdate = () => {
+            const scrollPos = getScrollPos();
 
-            leftColumnRef.current.style.transform = `skewY(${clamp(
-                distance,
-                -10,
-                10
-            )}deg)`;
-            rightColumnRef.current.style.transform = `skewY(${clamp(
-                distance,
-                -10,
-                10
-            )}deg)`;
-            middleColumnRef.current.style.transform = `skewY(${clamp(
-                -distance,
-                -10,
-                10
-            )}deg)`;
-        });
+            if (clonesHeight + scrollPos >= menuItems.current.scrollHeight) {
+                // menuItems.current.style.scrollBehavior = "unset";
+                // Scroll to the top when you’ve reached the bottom
+                setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
+                // menuItems.current.style.scrollBehavior = "smooth";
+            } else if (scrollPos <= 0) {
+                // Scroll to the bottom when you reach the top
+                setScrollPos(menuItems.current.scrollHeight - clonesHeight);
+                // menuItems.current.style.scrollBehavior = "smooth";
+            }
+        };
 
-        // Preload images
-        Promise.all([preloadImages(".grid-item-media")]).then(() => {
-            scrollElement.update();
-        });
+        menuItems.current.addEventListener("scroll", scrollUpdate);
+
+        return () => {
+            menuItems.current.removeEventListener("scroll", scrollUpdate);
+        };
     }, []);
 
-    const leftChunk = [...photos].splice(0, 5);
-    const middleChunk = [...photos].splice(5, 5);
-    const rightChunk = [...photos].splice(10, 5);
-    console.log(photos.splice(5, 10));
+    return (<CursorManager>
+            <CustomCursor/>
 
-    function onHomeClick() {
-        window.location.href = "/";
-    }
-    return (
-        <>
-                <h1 onClick={onHomeClick} className='name'>Artin Abiri</h1>
-            <div
-                className="main-container-projects"
-                id="main-container-projects"
-                data-scroll-container
-                ref={ref}
-            >
-                <div className="grid-wrap">
-                    <div className="left-column" ref={leftColumnRef}>
-                        {leftChunk.map(({ url, description }, index) => (
-                            <GridItem
-                                key={url}
-                                url={url}
-                                description={description}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-                    <div className="middle-column" data-scroll data-scroll-speed="-20">
-                        <div ref={middleColumnRef}>
-                            {middleChunk.map(({ url, description }, index) => (
-                                <GridItem
-                                    key={url}
-                                    url={url}
-                                    description={description}
-                                    index={index}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                    <div className="right-column" ref={rightColumnRef}>
-                        {rightChunk.map(({ url, description }, index) => (
-                            <GridItem
-                                key={url}
-                                url={url}
-                                description={description}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-                </div>
+            <Navbar/>
+            <div className="main-container" id="main-container">
+                <ul className='ul' ref={menuItems}>
+                    {renderItems.map((project, index) => (
+                        <ProjectItem key={index} project={project} itemIndex={index}/>))}
+                </ul>
             </div>
-        </>
-    );
-};
-export default Projects;
+            <FooterScroll/>
+        </CursorManager>);
+}

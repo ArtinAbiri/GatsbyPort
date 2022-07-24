@@ -2,12 +2,12 @@
 
 
 $breakpoint: 1000px;
-.header-container{
+.header-container-about {
 
   position: relative;
 
 
-  .header-menu{
+  .header-menu {
 
     position: absolute;
     left: 0;
@@ -24,10 +24,10 @@ $breakpoint: 1000px;
     }
   }
 
-  h1 {
-    font-size: 20vw;
+  .header-text {
+    font-size: 15vw;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     font-family: "Bodoni Moda", serif;
     font-weight: 700;
 
@@ -38,9 +38,41 @@ $breakpoint: 1000px;
 
   }
 }
-.lineParent{
+
+.lineParent {
   overflow: hidden;
-  .lineChildren{
+
+  .lineChildren {
     transform: translate(0, 500px);
   }
 }
+
+.image-face {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: auto;
+  height: 70%;
+  z-index: -1;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.sub-text {
+  margin-top: 80px;
+  font-size: 1.5vw;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 50px;
+  @media screen and (max-width: $breakpoint) {
+    font-size: 3vw;
+  }
+}
+
+
+
+$breakpoint: 1000px;
+
+
+
