@@ -2,6 +2,7 @@ import React from "react";
 import Loadable from "react-loadable";
 import "../styles/home.scss";
 import {Helmet} from "react-helmet";
+import {SEO} from "../components/SEO/SEO";
 
 
 const loader = () => <div>Loading.</div>;
@@ -27,3 +28,6 @@ const Index = () => {
   );
 };
 export default Index;
+export const Head = () => (
+    <SEO/>
+)

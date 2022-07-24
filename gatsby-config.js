@@ -5,6 +5,11 @@
  */
 
 module.exports = {
+
+  siteMetadata: {
+    title: `Artin Abiri Portfolio`,
+    description: `Artin Abiri's Portfolio Site`,
+  },
   /* Your site config here */
   plugins: [
     `gatsby-plugin-sass`,
@@ -13,7 +18,7 @@ module.exports = {
       options: {
         javascriptEnabled: true,
         modifyVars: {
-          "primary-color": "#00BFA6",
+          "primary-color": "#f5f0ec",
         },
       },
     },
