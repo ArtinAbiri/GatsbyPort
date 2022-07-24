@@ -9,6 +9,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+$breakpoint: 1000px;
 
 $bg-color: #f5f0ec;
 .grid-wrap {
@@ -88,7 +89,11 @@ section {
     text-transform: uppercase;
     font-family: "Bai Jamjuree", sans-serif;
     font-weight: 600;
-  }
+    @media screen and (max-width: $breakpoint) {
+      font-size: 5vw;
+    }
+
+    }
 
   h2 {
     font-size: 3vw;
@@ -97,6 +102,9 @@ section {
     font-family: "Bodoni Moda", serif;
     font-style: italic;
     margin-top: 10px;
+    @media screen and (max-width: $breakpoint) {
+      font-size: 6vw;
+    }
   }
 }
 

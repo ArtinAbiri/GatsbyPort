@@ -1,7 +1,7 @@
 {
   "theme_color" : "#f5f0ec",
   "background_color" : "#f5f0ec",
-  "display" : "browser",
+  "display" : "fullscreen",
   "scope" : "/",
   "start_url" : "/",
   "name" : "Artin Abiri Personal Portfolio",
