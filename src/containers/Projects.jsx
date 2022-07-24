@@ -9,7 +9,12 @@ import {useState} from "react";
 import Navbar from "../components/Navbar";
 import FooterScroll from "../components/FooterScroll";
 
-const WindowSize = {width: window.innerWidth, height: window.innerHeight};
+let WindowSize;
+if (typeof window !== `undefined`){
+    WindowSize = {width: window.innerWidth, height: window.innerHeight};
+}else {
+    WindowSize = {width: 1980, height: 1080};
+}
 
 export default function Projects() {
     const menuItems = useRef(null);
