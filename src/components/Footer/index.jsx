@@ -19,18 +19,18 @@ export default function Footer() {
 
                 <div style={{marginTop: '10vh'}}>
                     <img src='/image/github.webp' className='footerButton'
-                         onClick={() => window.open("https://github.com/ArtinAbiri", "_blank")} alt="github_logo"/>
+                         onClick={() => window.open("https://github.com/ArtinAbiri", "_blank")} alt="github_logo" onKeyDown={() => window.open("https://github.com/ArtinAbiri", "_blank")}/>
                     <img src='/image/linkedin.webp' className='footerButton'
                          onClick={() => window.open("https://www.linkedin.com/in/artinabiri/", "_blank")}
-                         alt='linkedin_logo'/>
+                         alt='linkedin_logo' onKeyDown={() => window.open("https://www.linkedin.com/in/artinabiri/", "_blank")} />
 
                     <br/>
                     <br/>
                     <br/>
-                    <p className='bottomfoot' onClick={() => window.location = 'mailto: kevinabiri@gmail.com'}>
+                    <p className='bottomfoot' onClick={() => window.location = 'mailto: kevinabiri@gmail.com'} onKeyDown={() => window.location = 'mailto: kevinabiri@gmail.com'}>
                         Email: Kevinabiri@gmail.com
                     </p>
-                    <p className='bottomfoot' onClick={() => window.location = 'tel:+46725555510'}>
+                    <p className='bottomfoot' onClick={() => window.location = 'tel:+46725555510'} onKeyDown={() => window.location = 'tel:+46725555510'}>
                         Phone: +46725555510</p>
                 </div>
             </div>

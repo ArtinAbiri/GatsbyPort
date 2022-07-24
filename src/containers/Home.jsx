@@ -1,8 +1,4 @@
-import React, {useState} from "react";
-import {useEffect} from "react";
-import {useRef} from "react";
-import CustomCursor from "../components/CustomCursor";
-import CursorManager from "../components/CustomCursor/CursorManager";
+import React, {useEffect, useRef, useState} from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -62,7 +58,7 @@ const Home = () => {
                     <h1>Portfolio</h1>
                 </div>
             ) : (
-             <div
+                <div
                     className="main-container"
                     id="main-container"
                     data-scroll-container
@@ -76,7 +72,7 @@ const Home = () => {
                     <Footer/>
                 </div>
             )}
-            </>
+        </>
 
     );
 };

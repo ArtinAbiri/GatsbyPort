@@ -32,7 +32,7 @@ export default function Knowlage() {
                         SQL
                     </li>
                     <li >
-                        <a className="animated-arrow" onClick={goAbout} style={{cursor: 'pointer'}}>
+                        <a className="animated-arrow" onClick={goAbout} style={{cursor: 'pointer'}} onKeyDown={goAbout}>
                             <span className="the-arrow -left">
                                  <span className="shaft"></span>
                              </span>

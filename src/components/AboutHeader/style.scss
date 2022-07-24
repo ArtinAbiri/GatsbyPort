@@ -56,7 +56,13 @@ $breakpoint: 1000px;
   z-index: -1;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
-}
+  @media screen and (max-width: $breakpoint) {
+    height: 45%;
+    top: 30vh;
+    left: 20vw;
+  }
+
+  }
 
 .sub-text {
   margin-top: 80px;
@@ -66,7 +72,7 @@ $breakpoint: 1000px;
   text-transform: uppercase;
   margin-left: 50px;
   @media screen and (max-width: $breakpoint) {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 }
 

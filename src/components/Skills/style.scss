@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600&family=Source+Code+Pro:wght@700&display=swap');
+
+$breakpoint2: 800px;
+
+
 .Skill-container{
   display: flex;
   flex-direction: column;
@@ -41,7 +45,12 @@
   font-size: 30px;
   margin-left: 20vw;
   margin-top: 50px;
-}
+  @media screen and (max-width: $breakpoint2) {
+    margin-left: 10vw;
+    font-size: 20px;
+  }
+
+  }
 
 .Skills{
   display: grid;
@@ -52,7 +61,15 @@
   grid-template-rows: repeat(2,60px);
   justify-items: center;
   align-items: center;
-}
+  text-align: center;
+
+  @media screen and (max-width: $breakpoint2) {
+    font-size: 3.2vw;
+    grid-template-columns: repeat(2,calc(90vw/2));
+    grid-template-rows: repeat(3,60px);
+  }
+
+  }
 .Skills2{
   display: grid;
   margin-top: 50px;
@@ -62,6 +79,14 @@
   grid-template-rows: repeat(2,60px);
   justify-items: center;
   align-items: center;
+  text-align: center;
+
+
+  @media screen and (max-width: $breakpoint2) {
+    font-size: 3.2vw;
+    grid-template-columns: repeat(2,calc(90vw/2));
+    grid-template-rows: repeat(5,60px);
+  }
 }
 .Skills3{
   display: grid;
@@ -72,6 +97,14 @@
   grid-template-rows: repeat(2,60px);
   justify-items: center;
   align-items: center;
+  text-align: center;
+
+  @media screen and (max-width: $breakpoint2) {
+
+    font-size: 5vw;
+    grid-template-columns: repeat(1,calc(90vw));
+    grid-template-rows: repeat(4,60px);
+  }
 }
 .Skills-li{
   padding: 10px;
@@ -80,6 +113,10 @@
   border-width: 2px;
   border-radius: 30px;
   color: #000000;
+  @media screen and (max-width: $breakpoint2) {
+
+    margin: 5px;
+  }
 }
 
 

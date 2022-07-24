@@ -1,19 +1,16 @@
-import React, {useEffect} from "react";
-import {useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import ProjectItem from "../components/ProjectItem";
 import CustomCursor from "../components/CustomCursor";
 import CursorManager from "../components/CustomCursor/CursorManager";
 import {pageData} from "../data2";
-import {useState} from "react";
 
 import Navbar from "../components/Navbar";
 import FooterScroll from "../components/FooterScroll";
-import {Helmet} from "react-helmet";
 
 let WindowSize;
-if (typeof window !== `undefined`){
+if (typeof window !== `undefined`) {
     WindowSize = {width: window.innerWidth, height: window.innerHeight};
-}else {
+} else {
     WindowSize = {width: 1980, height: 1080};
 }
 
@@ -85,16 +82,16 @@ export default function Projects() {
     }, []);
 
     return (<CursorManager>
-            <CustomCursor/>
+        <CustomCursor/>
 
-            <Navbar/>
-            <div className="main-container" id="main-container">
+        <Navbar/>
+        <div className="main-container" id="main-container">
 
-                <ul className='ul' ref={menuItems}>
-                    {renderItems.map((project, index) => (
-                        <ProjectItem key={index} project={project} itemIndex={index}/>))}
-                </ul>
-            </div>
-            <FooterScroll/>
-        </CursorManager>);
+            <ul className='ul' ref={menuItems}>
+                {renderItems.map((project, index) => (
+                    <ProjectItem key={index} project={project} itemIndex={index}/>))}
+            </ul>
+        </div>
+        <FooterScroll/>
+    </CursorManager>);
 }

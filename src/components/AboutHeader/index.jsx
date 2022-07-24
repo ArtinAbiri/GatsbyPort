@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 
 import gsap from "gsap";
 import SplitText from "../../utils/Split3.min";
@@ -31,15 +31,15 @@ export default function AboutHeader() {
 
             <h1 className='header-text' id="header-text">Artin Abiri</h1>
 
-            <img className='image-face' src='/image/face.webp' alt='image of Artin Abiri'/>
+            <img className='image-face' src='/image/face.webp' alt='Artin Abiri face'/>
             <div className='sub-text'>
-            <h2> Hello there.</h2>
+                <h2> Hello there.</h2>
                 <br/><br/>
 
-            <h2>I’m Artin, obviously. And this is my portfolio.</h2>
+                <h2>I’m Artin, obviously. And this is my portfolio.</h2>
                 <br/><br/>
-                <h2> I'm a Master in Software Engineering student  </h2>
-            <h2>at Chalmers with a major in Entrepreneurship and Business Design   </h2>
+                <h2> I'm a Master in Software Engineering student </h2>
+                <h2>at Chalmers with a major in Entrepreneurship and Business Design </h2>
             </div>
         </section>
     );

@@ -24,12 +24,7 @@ export default function About() {
             const split = new SplitText("#headline", {type: "lines"});
 
             gsap.to(split.lines, {
-                duration: 1,
-                y: -20,
-                opacity: 1,
-                stagger: 0.1,
-                ease: "power4.out",
-                // onComplete: () => split.revert(),
+                duration: 1, y: -20, opacity: 1, stagger: 0.1, ease: "power4.out", // onComplete: () => split.revert(),
             });
         }
     }, [reveal]);
@@ -38,8 +33,7 @@ export default function About() {
         window.location.href = "/about";
     }
 
-    return (
-        <section
+    return (<section
             className={cn("about-section", {"is-reveal": reveal})}
             data-scroll-section
         >
@@ -53,12 +47,11 @@ export default function About() {
                         Entrepreneurship at Chalmers University of Technology.
 
                     </p>
-                    <div className='button' onClick={goAbout}>
+                    <button className='button' onClick={goAbout}>
                         More about me
-                    </div>
+                    </button>
                 </div>
                 <img src={'/image/train.gif'} alt='gif of a metro going though walls'/>
             </div>
-        </section>
-    );
+        </section>);
 }
