@@ -57,7 +57,7 @@ export default function About() {
                         More about me
                     </div>
                 </div>
-                <img src={'/image/train.gif'}/>
+                <img src={'/image/train.gif'} alt='gif of a metro going though walls'/>
             </div>
         </section>
     );

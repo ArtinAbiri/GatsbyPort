@@ -31,7 +31,7 @@ export default function AboutHeader() {
 
             <h1 className='header-text' id="header-text">Artin Abiri</h1>
 
-            <img className='image-face' src='/image/face.jpg'/>
+            <img className='image-face' src='/image/face.webp' alt='image of Artin Abiri'/>
             <div className='sub-text'>
             <h2> Hello there.</h2>
                 <br/><br/>
