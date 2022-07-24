@@ -53,8 +53,6 @@ export default function Navbar() {
 
                 <h1 onClick={goAbout}>About</h1>
                 <h1 onClick={goProjects}>Projects</h1>
-                <h1>Contact</h1>
-
             </div>
         </>
     );
