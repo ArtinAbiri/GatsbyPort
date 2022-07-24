@@ -17,6 +17,7 @@ if (typeof window !== `undefined`){
 }
 
 export default function Projects() {
+
     const menuItems = useRef(null);
     const [renderItems, setRenderItems] = useState(pageData);
 
