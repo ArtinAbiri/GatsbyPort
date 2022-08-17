@@ -12,7 +12,7 @@ export default function Featured() {
             </div>
             <div className='featured-column-layout'>
                 <h6>Gothenburg</h6>
-                <img src={secondImage} data-scroll alt='Image of Gothenburgh trains'/>
+                <img src={secondImage} data-scroll alt='Image of Gothenburgh from above'/>
             </div>
         </section>
     );

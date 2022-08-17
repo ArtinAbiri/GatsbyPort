@@ -1,5 +1,5 @@
 const photos = [
-        "/image/face.webp",
-    "/image/spar.webp"
+        "/image/facesummer.webp",
+    "/image/sparvagn.webp",
     ];
 export default photos;
