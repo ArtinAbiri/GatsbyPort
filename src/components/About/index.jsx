@@ -41,9 +41,9 @@ export default function About() {
             <div className='flex-about'>
                 <div>
                     <p ref={ref} id="headline" className={cn({"is-reveal": reveal})}>
-                        Hi! I'm Artin and I'm a business developer, project manager and web developer based in
+                        Hi! I'm Artin and I'm a business developer, entrepreneur, software engineer and intellectual property strategist based in
                         Gothenburg.
-                        Currently finishing my Engineering master in Tech based Business Development and
+                        Currently finishing my masters in Tech based Business Development and
                         Entrepreneurship at Chalmers University of Technology.
 
                     </p>

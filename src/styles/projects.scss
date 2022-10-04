@@ -5,23 +5,22 @@
 $bg-color: white;
 
 
-  ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 
 .main-container {
   .ul {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
     position: relative;
-    width: 50vw;
+    width: 60vw;
     height: auto;
     padding-left: 10vw;
     box-sizing: border-box;
 
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     overflow: auto;
   }
 

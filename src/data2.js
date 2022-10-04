@@ -42,5 +42,15 @@ export const pageData = [
         title: "Enspecta",
         info: ["Project Management", "Rebranding"],
     },
+    {
+        url: "/image/catefix.webp",
+        title: "Catefix",
+        info: ["Project Management"],
+    },
+    {
+        url: "/image/flight.webp",
+        title: "Flightdeck",
+        info: ["Project Management", "Development Strategy"],
+    },
 
 ];

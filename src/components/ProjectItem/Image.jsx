@@ -14,7 +14,7 @@ export default function Image({
       className={cn({ active })}
       style={{
         opacity: opacity,
-        transform: `translate3d(${parallaxPos.x}px, ${parallaxPos.y}px, 0px) rotate(${rotationPosition}deg) scale(${scale}) `,
+        transform: `translate3d(${parallaxPos.x}px, ${50}px, 0px) rotate(${rotationPosition}deg) scale(${scale}) `,
       }}
       src={url}
      alt='container for images of projects'/>

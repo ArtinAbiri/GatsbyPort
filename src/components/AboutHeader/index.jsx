@@ -38,8 +38,8 @@ export default function AboutHeader() {
 
                 <h2>I’m Artin, obviously. And this is my portfolio.</h2>
                 <br/><br/>
-                <h2> I'm a Master in Software Engineering student </h2>
-                <h2>at Chalmers with a major in Entrepreneurship and Business Design </h2>
+                <h2> I'm a Master student in  ENTREPRENEURSHIP AND BUSINESS DESIGN  </h2>
+                <h2>as well as a Software Engineering at Chalmers School of Technology</h2>
             </div>
         </section>
     );

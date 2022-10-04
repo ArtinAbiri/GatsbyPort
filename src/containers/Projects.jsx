@@ -25,19 +25,26 @@ export default function Projects() {
         // How many items fit in the window?
         const fitIn = Math.ceil(WindowSize.height / itemHeight);
         // Create [fitIn] clones from the beginning of the list
-
+        console.log(renderItems)
         // Add clones
         const clonedItems = [...renderItems]
-            .filter((_, index) => index < fitIn)
-            .map((target, index) => {
-                return target;
-            });
+        console.log(clonedItems);
+        clonedItems.push(...clonedItems)
+        clonedItems.push(...clonedItems)
+        clonedItems.push(...clonedItems)
+        clonedItems.push(...clonedItems)
+        clonedItems.push(...clonedItems)
+        clonedItems.push(...clonedItems)
+
+        console.log(clonedItems.length)
 
         // All clones height
 
         setRenderItems([...renderItems, ...clonedItems]);
         return clonedItems.length * itemHeight;
     };
+
+
 
     const getScrollPos = () => {
         return ((menuItems.current.pageYOffset || menuItems.current.scrollTop) - (menuItems.current.clientTop || 0));
@@ -81,7 +88,8 @@ export default function Projects() {
         };
     }, []);
 
-    return (<CursorManager>
+    return (
+        <CursorManager>
         <CustomCursor/>
 
         <Navbar/>

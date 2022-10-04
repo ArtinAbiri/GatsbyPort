@@ -1,6 +1,5 @@
 import React, {useContext, useReducer, useRef} from "react";
 import cn from "classnames";
-import {Hash} from "react-feather";
 import {CursorContext} from "../CustomCursor/CursorManager";
 import animate from "./animate";
 import Image from "./Image";
@@ -8,11 +7,7 @@ import "./style.scss";
 import Title from "./Title";
 
 const initialState = {
-    rotationPosition: 0,
-    scale: 0.8,
-    parallaxPos: {x: 0, y: -20},
-    opacity: 0,
-    active: false,
+    rotationPosition: 0, scale: 0.8, parallaxPos: {x: 0, y: -20}, opacity: 0, active: false,
 };
 
 function reducer(state, action) {
@@ -24,28 +19,24 @@ function reducer(state, action) {
 
         case "MOUSE/COORDINATES": {
             return {
-                ...state,
-                parallaxPos: action.payload,
+                ...state, parallaxPos: action.payload,
             };
         }
         case "CHANGE/ROTATION": {
             return {
-                ...state,
-                rotationPosition: action.payload,
+                ...state, rotationPosition: action.payload,
             };
         }
 
         case "CHANGE/SCALE": {
             return {
-                ...state,
-                scale: action.payload,
+                ...state, scale: action.payload,
             };
         }
 
         case "CHANGE/OPACITY": {
             return {
-                ...state,
-                opacity: action.payload,
+                ...state, opacity: action.payload,
             };
         }
         default:
@@ -53,7 +44,7 @@ function reducer(state, action) {
     }
 }
 
-const ProjectItem = ({project, itemIndex}) => {
+const ProjectItem = ({project}) => {
     const listItem = useRef(null);
     const {setSize} = useContext(CursorContext);
 
@@ -65,55 +56,40 @@ const ProjectItem = ({project, itemIndex}) => {
         const x = (window.innerWidth - event.pageX * speed) / 100;
         const y = (window.innerHeight - event.pageY * speed) / 100;
 
+
         dispatch({type: "MOUSE/COORDINATES", payload: {x, y}});
     }
 
     const handleSetRotation = () => {
         // Random between -15 and 15
-        const newRotation =
-            Math.random() * 15 * (Math.round(Math.random()) ? 1 : -1);
+        const newRotation = Math.random() * 15 * (Math.round(Math.random()) ? 1 : -1);
 
         animate({
-            fromValue: state.rotationPosition,
-            toValue: newRotation,
-            onUpdate: (value, callback) => {
+            fromValue: state.rotationPosition, toValue: newRotation, onUpdate: (value, callback) => {
                 dispatch({type: "CHANGE/ROTATION", payload: value});
                 callback();
-            },
-            onComplete: () => {
-            },
-            duration: 500,
-            easeMethod: easeMethod,
+            }, onComplete: () => {
+            }, duration: 500, easeMethod: easeMethod,
         });
     };
 
     const handleSetScale = (initialScale, newScale, duration) => {
         animate({
-            fromValue: initialScale,
-            toValue: newScale,
-            onUpdate: (value, callback) => {
+            fromValue: initialScale, toValue: newScale, onUpdate: (value, callback) => {
                 dispatch({type: "CHANGE/SCALE", payload: value});
                 callback();
-            },
-            onComplete: () => {
-            },
-            duration: duration,
-            easeMethod: easeMethod,
+            }, onComplete: () => {
+            }, duration: duration, easeMethod: easeMethod,
         });
     };
 
     const handleOpacity = (initialOpacity, newOpacity, duration) => {
         animate({
-            fromValue: initialOpacity,
-            toValue: newOpacity,
-            onUpdate: (value, callback) => {
+            fromValue: initialOpacity, toValue: newOpacity, onUpdate: (value, callback) => {
                 dispatch({type: "CHANGE/OPACITY", payload: value});
                 callback();
-            },
-            onComplete: () => {
-            },
-            duration: duration,
-            easeMethod: easeMethod,
+            }, onComplete: () => {
+            }, duration: duration, easeMethod: easeMethod,
         });
     };
 
@@ -122,8 +98,8 @@ const ProjectItem = ({project, itemIndex}) => {
 
         setSize("regular");
         handleSetRotation();
-        handleSetScale(0.8, 1, 500);
-        handleOpacity(0, 1, 500);
+        handleSetScale(0.8, 1, 200);
+        handleOpacity(0, 1, 200);
         dispatch({type: "MOUSE/ENTER"});
     };
 
@@ -136,8 +112,7 @@ const ProjectItem = ({project, itemIndex}) => {
         dispatch({type: "MOUSE/COORDINATES", payload: initialState.parallaxPos});
         listItem.current.removeEventListener("mousemove", parallax);
     };
-    return (
-        <li ref={listItem} className="project-item-container">
+    return (<li ref={listItem} className="project-item-container">
             <Title
                 title={project.title}
                 handleMouseEnter={handleMouseEnter}
@@ -154,17 +129,14 @@ const ProjectItem = ({project, itemIndex}) => {
             <div className={cn("info-block", {"as-active": state.active})}>
                 <p className="info-block-header">
           <span>
-            <Hash/>0{itemIndex}
+              <h1>{project.title}</h1>
           </span>
                 </p>
-                {project.info.map((element) => (
-                    <p key={element}>
+                {project.info.map((element) => (<p key={element}>
                         <span>{element}</span>
-                    </p>
-                ))}
+                    </p>))}
             </div>
-        </li>
-    );
+        </li>);
 };
 
 export default ProjectItem;
