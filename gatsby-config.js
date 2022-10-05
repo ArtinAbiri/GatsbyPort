@@ -13,16 +13,10 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        id: "GTM-TRPF2Z8",
-
-        includeInDevelopment: false,
-
-        // Defaults to false
-        enableWebVitalsTracking: true,
-        // Defaults to https://www.googletagmanager.com
-        selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
+        // The property ID; the tracking code won't be generated without it
+        trackingId: process.env.TRACKING_ID,
       },
     },
     `gatsby-plugin-sass`,
