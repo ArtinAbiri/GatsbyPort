@@ -12,6 +12,19 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-TRPF2Z8",
+
+        includeInDevelopment: false,
+
+        // Defaults to false
+        enableWebVitalsTracking: true,
+        // Defaults to https://www.googletagmanager.com
+        selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,

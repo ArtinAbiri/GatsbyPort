@@ -7,14 +7,6 @@ import {SEO} from "../components/SEO/SEO";
 const ProjectsLazy = () => {
     return (
         <>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1316HBFYF"/>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments)}
-                gtag('js', new Date());
-
-                gtag('config', 'G-K1316HBFYF');
-            </script>
             <title>My Projects</title>
             <Helmet
                 htmlAttributes={{
