@@ -16,7 +16,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
 
-    options: {
+
+        options: {
         javascriptEnabled: true,
         icon: 'src/top.png',
         theme_color: "#f5f0ec",

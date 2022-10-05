@@ -11,6 +11,14 @@ const AboutLazy = Loadable({
 
 const Index = () => {
     return (<>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1316HBFYF"/>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+
+            gtag('config', 'G-K1316HBFYF');
+        </script>
             <title>About Me</title>
             <Helmet
                 htmlAttributes={{
